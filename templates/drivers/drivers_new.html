@@ -1,0 +1,4 @@
+{% for driver in drivers %}
+    <p>{{ driver.first_name }} {{ driver.last_name }} ({{ driver.date_of_birth}})</p>
+{% endfor %}
+<a href="{% url 'driver_new' %}">Add new driver</a>

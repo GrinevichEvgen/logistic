@@ -1,6 +1,9 @@
-from django.shortcuts import render, redirect
-from .models import Driver
+
+from django.shortcuts import redirect
+from django.shortcuts import render
+
 from .forms import DriverForm
+from .models import Driver
 
 
 def driver_list(request):
@@ -17,6 +20,3 @@ def driver_new(request):
     else:
         form = DriverForm()
     return render(request, 'drivers/driver_new.html', {'form': form})
-
-
-

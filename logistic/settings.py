@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'drivers',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +128,3 @@ AUTHENTICATION_BACKENDS = (
     'users.backends.EmailAuthBackend',
     'django.contrib.auth.backends.ModelBackend',
 )
-

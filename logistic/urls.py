@@ -19,6 +19,8 @@ from operator import index
 from django.contrib import admin
 from django.urls import path
 
+
+from auto.views import auto_list
 from drivers.views import driver_list, driver_new
 
 from users.views import register, login_view, logout_view
@@ -32,5 +34,6 @@ urlpatterns = [
 
     path('drivers/', driver_new, name='driver'),
     path('drivers/', driver_list, name='drivers'),
+    path('auto/', auto_list, name='auto'),
 
 ]

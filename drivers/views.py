@@ -1,9 +1,12 @@
+import logging
 
 from django.shortcuts import redirect
 from django.shortcuts import render
 
 from .forms import DriverForm
 from .models import Driver
+
+logger = logging.getLogger(__name__)
 
 
 def driver_list(request):

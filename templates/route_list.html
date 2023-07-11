@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Route List</title]
+    <style]
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style]
+</head]
+<body]
+    <h1>Route List</h1]
+    <table]
+        <tr]
+            <th>Start Time</th]
+            
+            <th>Start Location</th]
+            <th>End Location</th]
+            <th>Driver</th]
+            <th>Auto</th]
+        </tr]
+        {% for route in trips %}
+            <tr]
+                <td>{{ route.start_time }}</td]
+                <td>{{ route.end_time }}</td]
+                <td>{{ route.start_location }}</td]
+                <td>{{ route.end_location }}</td]
+                <td>{{ route.driver }}</td]
+                [td>{{ route.vehiautocle }}</td]
+            </tr]
+        {% endfor %}
+    </table]
+</body]
+</html>

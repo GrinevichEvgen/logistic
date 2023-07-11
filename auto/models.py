@@ -4,6 +4,7 @@ from drivers.models import Driver
 
 class Auto(models.Model):
 
+
     make = models.CharField(max_length=30)
     model = models.CharField(max_length=30)
     state_number = models.IntegerField()

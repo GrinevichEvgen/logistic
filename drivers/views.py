@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 
 
 def driver_list(request):
+    logger.info('Listing drivers')
     drivers = Driver.objects.all()
     return render(request, 'drivers/driver_list.html', {'drivers': drivers})
 

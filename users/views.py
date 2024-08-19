@@ -1,8 +1,8 @@
 import logging
-
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.contrib.auth import logout, login, authenticate
+from django.http import HttpResponse
+from django.shortcuts import redirect
 
 from users.forms import RegisterForm, LoginForm
 from users.models import User
@@ -44,3 +44,7 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect("index")
+
+
+def home(request):
+    return render(request, 'home.html')

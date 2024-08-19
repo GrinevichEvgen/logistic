@@ -25,8 +25,10 @@ from drivers.views import driver_list, driver_new
 from routes.views import route_list
 
 from users.views import register, login_view, logout_view
+from users import views
 
 urlpatterns = [
+    path('', views.home, name='home'),
     path('admin/', admin.site.urls),
 
     path('register/', register, name="register"),

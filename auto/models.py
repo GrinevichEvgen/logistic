@@ -3,10 +3,9 @@ from drivers.models import Driver
 
 
 class Auto(models.Model):
-
-
-    make = models.CharField(max_length=30)
-    model = models.CharField(max_length=30)
+    make = models.CharField(max_length=100)
+    model = models.CharField(max_length=100)
+    year = models.IntegerField(default=10)
     state_number = models.IntegerField()
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE, related_name='autos')
 

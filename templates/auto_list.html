@@ -3,12 +3,35 @@
 <head>
     <title>Auto List</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4682b4;
+        }
         table {
+            width: 80%;
+            margin: 20px auto;
             border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            border: 1px solid black;
-            padding: 8px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #4682b4;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
         }
     </style>
 </head>
@@ -18,13 +41,15 @@
         <tr>
             <th>Make</th>
             <th>Model</th>
-            <th>state number</th>
+            <th>Year</th>
+            <th>State Number</th>
             <th>Driver</th>
         </tr>
-        {% for vehicle in vehicles %}
+        {% for auto in autos %}
             <tr>
                 <td>{{ auto.make }}</td>
                 <td>{{ auto.model }}</td>
+                <td>{{ auto.year }}</td>
                 <td>{{ auto.state_number }}</td>
                 <td>{{ auto.driver }}</td>
             </tr>

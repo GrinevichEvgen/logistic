@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Route List</title]
-    <style]
+    <title>Route List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #4682b4;
+        }
         table {
+            width: 80%;
+            margin: 20px auto;
             border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            border: 1px solid black;
-            padding: 8px;
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
         }
-    </style]
-</head]
-<body]
-    <h1>Route List</h1]
-    <table]
-        <tr]
-            <th>Start Time</th]
-            
-            <th>Start Location</th]
-            <th>End Location</th]
-            <th>Driver</th]
-            <th>Auto</th]
-        </tr]
+        th {
+            background-color: #4682b4;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        .icon {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Route List</h1>
+    <table>
+        <tr>
+            <th>Start Time</th>
+            <th>Start Location</th>
+            <th>End Location</th>
+            <th>Driver</th>
+            <th>Auto</th>
+        </tr>
         {% for route in trips %}
-            <tr]
-                <td>{{ route.start_time }}</td]
-                <td>{{ route.end_time }}</td]
-                <td>{{ route.start_location }}</td]
-                <td>{{ route.end_location }}</td]
-                <td>{{ route.driver }}</td]
-                [td>{{ route.vehiautocle }}</td]
-            </tr]
+            <tr>
+                <td>{{ route.start_time }}</td>
+                <td>{{ route.start_location }}</td>
+                <td>{{ route.end_location }}</td>
+                <td>
+                    <img src="driver_icon.png" alt="Driver" class="icon">
+                    {{ route.driver }}
+                </td>
+                <td>
+                    <img src="car_icon.png" alt="Auto" class="icon">
+                    {{ route.auto }}
+                </td>
+            </tr>
         {% endfor %}
-    </table]
-</body]
+    </table>
+</body>
 </html>

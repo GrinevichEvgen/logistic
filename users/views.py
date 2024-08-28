@@ -25,17 +25,24 @@ def register(request):
 
 def login_view(request):
     if request.method == "POST":
+        logger.info("POST request received")
         form = LoginForm(request.POST)
         if form.is_valid():
+            logger.info("Form is valid")
             user = authenticate(
                 request=request,
                 email=form.cleaned_data["email"],
                 password=form.cleaned_data["password"],
             )
             if user is None:
+                logger.warning("Authentication failed")
                 return HttpResponse("BadRequest", status=400)
+            logger.info("User authenticated")
             login(request, user)
-            return redirect("index")
+            return redirect('driver_list')  # Перенаправление в админку
+        else:
+            logger.warning("Form is not valid")
+            logger.warning(form.errors)  # Отображение ошибок формы
     else:
         form = LoginForm()
     return render(request, "login.html", {"form": form})

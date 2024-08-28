@@ -7,5 +7,5 @@ logger = logging.getLogger(__name__)
 
 def route_list(request):
     logger.info('Listing routes')
-    route = Route.objects.all()
-    return render(request, 'route_list.html', {'route': route})
+    trips = Route.objects.all()
+    return render(request, 'route_list.html', {'trips': trips})
